@@ -18,13 +18,13 @@ Find_Max:
 // update this code if necessary to print the length of the array
 // this block prints the value of register %edi
 // initially the parameter n
-	movl	%edi, -4(%rbp)          # store array length on stack
+    movl    %edi, -4(%rbp)          # store array length on stack
     movq    %rsi, -12(%rbp)         # store address of array pointer on stack
   
     movl	-4(%rbp),   %esi          # prints array length
-	leaq	.LC0(%rip), %rdi
-	movl	$0,         %eax
-	call	printf@PLT
+    leaq	.LC0(%rip), %rdi
+    movl	$0,         %eax
+    call	printf@PLT
 
 // reserve space for local variables
 /* make a table here the variables from 
@@ -74,10 +74,10 @@ COND:                               # Loop from index = 1 to index = length of a
 
 // prepare the return value
 // the template returns -1, you will need to update this
-	movl	-20(%rbp), %eax         # Return the maximum value's index
+    movl	-20(%rbp), %eax         # Return the maximum value's index
 
 // epilogue - complete the epilogue below
-	addq    $32, %rsp               # Restore the stack pointer
+    addq    $32, %rsp               # Restore the stack pointer
     popq    %rbp
     ret
 
